@@ -90,10 +90,10 @@ public class MusicServiceTest {
     }
 
     @Test
-    public void updateComment() throws MusicIdNotFoundException {
+    public void updateTrack() throws MusicIdNotFoundException {
 
         when(musicRepository.save((Music) any())).thenReturn(music);
-            Music updateMusic = musicService.updateComment(music);
+            Music updateMusic = musicService.updateTrack(music);
 
         verify(musicRepository,times(1)).save(music);
 

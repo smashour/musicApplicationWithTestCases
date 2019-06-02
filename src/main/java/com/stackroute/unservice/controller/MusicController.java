@@ -65,7 +65,7 @@ public class MusicController {
 
         try {
 
-            Music music1=musicService.updateComment(music);
+            Music music1=musicService.updateTrack(music);
             return new ResponseEntity<Music>(music1, HttpStatus.OK);
         }catch (MusicIdNotFoundException ex)
         {

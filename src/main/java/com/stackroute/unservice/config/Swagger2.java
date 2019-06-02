@@ -17,7 +17,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Configuration
 @EnableSwagger2
 
-public class Swaggy2Config {
+public class Swagger2 {
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.stackroute")).paths(regex("/api/v1/.*")).build().apiInfo(appInfo());

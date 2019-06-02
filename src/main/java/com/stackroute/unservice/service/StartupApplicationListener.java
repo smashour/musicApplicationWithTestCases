@@ -26,15 +26,8 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent){
-        //logs.info("Inserting data on start");
-
-//        Music track1 = new Music(2,"Darkside","Singer : alan Walker");
-//        musicRepository.save(track1);
         track2 = new Music(3,"walkthroughfire","Singer : alanwalker");
         musicService.seedData(track2);
-//        Track track9 = new Track(Integer.parseInt(env.getProperty("trackid")),env.getProperty("name"),env.getProperty("comments"));
-//        trackRepository.save(track9);
-
         logs.info("data successfully inserted");
     }
 }

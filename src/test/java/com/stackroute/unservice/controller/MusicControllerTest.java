@@ -85,7 +85,7 @@ public class MusicControllerTest{
 
     @Test
     public void updateComment() throws Exception {
-        when(musicService.updateComment(any())).thenReturn(music);
+        when(musicService.updateTrack(any())).thenReturn(music);
         mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/user")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(music)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())

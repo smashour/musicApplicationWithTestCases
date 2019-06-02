@@ -15,7 +15,7 @@ public interface MusicService {
 
     public MusicRepository deleteMusic(int id);
 
-    Music updateComment(Music music) throws MusicIdNotFoundException;
+    Music updateTrack(Music music) throws MusicIdNotFoundException;
 
     //List<Music> getMusicByName(String name) throws MusicNotFoundException;
 

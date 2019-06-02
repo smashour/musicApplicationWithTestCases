@@ -47,7 +47,7 @@ public class MusicServiceImpl implements MusicService {
 
 
     @Override
-    public Music updateComment(Music music) throws MusicIdNotFoundException {
+    public Music updateTrack(Music music) throws MusicIdNotFoundException {
         Music savedMusic=musicRepository.save(music);
         if(savedMusic==null)
         {
