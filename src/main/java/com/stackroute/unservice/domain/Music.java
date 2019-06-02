@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Document(collection ="Music")
 public class Music {
-    @Id //to make id as primary key
+    @Id 
      int id;
     String name;
     String comments;
