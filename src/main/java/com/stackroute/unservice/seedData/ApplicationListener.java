@@ -1,22 +1,20 @@
-package com.stackroute.unservice.service;
-
+package com.stackroute.unservice.seedData;
 
 import com.stackroute.unservice.domain.Music;
 import com.stackroute.unservice.repository.MusicRepository;
+import com.stackroute.unservice.service.MusicService;
+
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
-import org.jboss.logging.Logger;
 
-//import java.util.logging.Logger;
 
 @Component
 @PropertySource("classpath:application.properties")
-public class StartupApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
-    private static final Logger logs = Logger.getLogger(StartupApplicationListener.class);
+public class ApplicationListener implements org.springframework.context.ApplicationListener<ContextRefreshedEvent> {
+    private static final Logger logs = Logger.getLogger(ApplicationListener.class);
     private MusicRepository musicRepository;
 
     @Autowired
