@@ -39,9 +39,13 @@ public class MusicServiceImpl implements MusicService {
     }
 
     @Override
-    public MusicRepository deleteMusic(int id) {
-       musicRepository.deleteById(id);
-       return musicRepository;
+    public MusicRepository deleteMusic(int id) throws MusicIdNotFoundException{
+       if(musicRepository.existsById(id)){
+           musicRepository.deleteById(id);
+           return musicRepository;
+       }
+       throw new MusicIdNotFoundException();
+
     }
 
 
@@ -58,16 +62,7 @@ public class MusicServiceImpl implements MusicService {
 
 
 
-   // @Override
-//    public List<Music> getMusicByName(String name) throws MusicNotFoundException {
-//        List<Music> listOfTracks = null;
-//        listOfTracks = musicRepository.getMusicByName(name);
-//        if (listOfTracks.equals(null))
-//        {
-//            throw new MusicNotFoundException("Track not found exception");
-//        }
-//        return listOfTracks;
-//    }
+
 
     @Override
     public void seedData(Music music) {

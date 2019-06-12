@@ -6,12 +6,11 @@ import com.stackroute.unservice.exceptions.MusicNotFoundException;
 import com.stackroute.unservice.service.MusicService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "api/v1/")
 public class MusicController {
@@ -66,26 +65,17 @@ public class MusicController {
     }
 
     @GetMapping("/user/{name}")
-//    public ResponseEntity<List<Music>> getMusicByName(@PathVariable String name) throws MusicNotFoundException {
-//        ResponseEntity responseEntity = null;
-//
-//        try {
-//            List<Music> trackOne = musicService.getMusicByName(name);
-//            return new ResponseEntity<List<Music>>(trackOne, HttpStatus.OK);
-//        }catch (MusicNotFoundException ex) {
-////            responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.CONFLICT);
-////            e.printStackTrace();}
-////        return responseEntity;
-//            throw ex;
-//        }
-//
-//}
+
 
 
 
     @DeleteMapping("/user/{id}")
     public ResponseEntity<?> deleteMusic(@PathVariable int id) {
-        musicService.deleteMusic(id);
+        try {
+            musicService.deleteMusic(id);
+        } catch (MusicIdNotFoundException e) {
+            e.printStackTrace();
+        }
         return new ResponseEntity<String>("succesfully deleted", HttpStatus.OK);
 
     }

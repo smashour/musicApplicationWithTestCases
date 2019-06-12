@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Document(collection ="Music")
 public class Music {
-    @Id 
+    @Id
      int id;
     String name;
     String comments;

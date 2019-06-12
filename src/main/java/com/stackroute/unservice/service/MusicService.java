@@ -13,11 +13,11 @@ public interface MusicService {
 
     public List<Music> getAllMusics();
 
-    public MusicRepository deleteMusic(int id);
+    public MusicRepository deleteMusic(int id) throws MusicIdNotFoundException;
 
     Music updateTrack(Music music) throws MusicIdNotFoundException;
 
-    //List<Music> getMusicByName(String name) throws MusicNotFoundException;
+
 
     public void seedData(Music music);
 }

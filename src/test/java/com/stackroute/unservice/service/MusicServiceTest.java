@@ -65,9 +65,6 @@ public class MusicServiceTest {
         System.out.println("savedMusic" + savedMusic);
         Assert.assertEquals(music, savedMusic);
 
-       /*doThrow(new UserAlreadyExistException()).when(userRepository).findById(eq(101));
-       userService.saveUser(user);*/
-
 
     }
 
@@ -107,23 +104,6 @@ public class MusicServiceTest {
 
     }
 
-
-//
-//    @Test(expected = MusicNotFoundException.class)
-//    public void removeMuzixTestFailure() throws MusicNotFoundException {
-//        //when(muzixRepository.existsById(muzix.getTrackId())).thenReturn(true);
-//        musicRepository.deleteById(music.getId());
-//        when(musicRepository.findAll()).thenReturn(null);
-//        List <Music> removeMuzix = musicService.deletemusic.getId());
-//        System.out.println("savedMuzix" + removeMuzix);
-//        System.out.println(muzix);
-//        Assert.assertEquals(list,removeMuzix);
-//
-//      /*doThrow(new UserAlreadyExistException()).when(userRepository).findById(eq(101));
-//      userService.saveUser(user);*/
-
-
-    //}
 
 
 
